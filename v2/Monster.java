@@ -3,9 +3,9 @@
  // HW28 -- Ye Olde Role Playing Game
  // 2017-11-08
 
-public class Monster {
+public class Monster extends Character{
   //instace vars
-	private int health;
+  private int health;
   private int strength;
   private int defense;
   private double atkRate;
