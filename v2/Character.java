@@ -26,3 +26,4 @@ public class Character {
 	x.lowerHP(damage);//lowers YOUR hp by "damage"
 	return damage;//returns the amount of damge done
     }
+}
