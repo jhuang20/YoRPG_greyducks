@@ -3,7 +3,7 @@
 // HW28 -- Ye Olde Role Playing Game
 // 2017-11-08
  
-public class Protagonist {
+public class Protagonist extends Character{
     //instance vars
     private String name;
     private int health;
