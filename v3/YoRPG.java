@@ -1,7 +1,7 @@
  // Team Greyducks -- Addison Huang, James Huang, Frank Chen
  // APCS1 pd1
- // HW28 -- Ye Olde Role Playing Game
- // 2017-11-08
+ // HW30 -- Ye Olde Role Playing Game, Expanded
+ // 2017-11-13
 
 /**********************************************
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
@@ -21,12 +21,13 @@ public class YoRPG
   public final static int MAX_ENCOUNTERS = 5;
 
   //each round, a Protagonist and a Monster will be instantiated...
-  private Protagonist pat;   //Is it man or woman?
+  private Character pat;   //Is it man or woman?
   private Monster smaug; //Friendly generic monster name?
 
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int playerClass; //Added this for HW30
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -70,7 +71,34 @@ public class YoRPG
 	    difficulty = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
-
+	
+	//Choosing your class
+	s = "Choose your class: \n";
+	s += "\t1: Knight \n";
+	s += "\t2: Mage \n";
+	s += "\t3: Archer \n";
+	System.out.print( s );
+	
+	try {
+		playerClass = Integer.parseInt (in.readLine());
+	}
+	catch ( IOException e ) { }
+	
+	//instantiate the player's character
+    pat = new Protagonist( name );
+	
+	//Class confirmation
+	if (playerClass == 1) {
+		pat = new Knight( name );
+	}
+    else if (playerClass == 2) {
+		pat = new Mage( name );
+	}
+	else {
+		// insert class Archer in here
+	}
+	System.out.println( pat.about(playerClass) );
+	
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -78,9 +106,6 @@ public class YoRPG
 	    name = in.readLine();
     }
     catch ( IOException e ) { }
-
-    //instantiate the player's character
-    pat = new Protagonist( name );
 
   }//end newGame()
 

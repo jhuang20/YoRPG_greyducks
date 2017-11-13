@@ -15,7 +15,7 @@ public class Protagonist extends Character{
 	this.name = name;
 	//default attributes
 	health = 125;
-	strength = 100;
+	strength = 50;
 	defense = 40;
 	atkRate = 0.4;
     }
