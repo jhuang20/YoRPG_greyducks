@@ -3,14 +3,14 @@
 // HW31 -- Ye Olde Role Playing Game, Expanded
 // 2017-11-13
  
-public class Giant extends Monster {
-   
-   public Giant() {
-	    this.name = name;
-		health = 200;
-		strength = 100;
+public class Goblin extends Monster {
+	
+	public Goblin () {
+		this.name = name;
+		health = 100;
+		strength = 25;
 		defense = 25;
-		atkRate = 0.5;
+		atkRate = 1.5;
     }
- 
+	
 }

@@ -22,12 +22,14 @@ public class YoRPG
 
   //each round, a Protagonist and a Monster will be instantiated...
   private Protagonist pat;   //Is it man or woman?
-  private Character smaug; //Friendly generic monster name?
+  private Monster smaug; //Friendly generic monster name?
 
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
   private int playerClass; //Added this for HW30
+  private int monsterClass; //Added this for HW30
+  private String monsterName;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -85,19 +87,19 @@ public class YoRPG
 	catch ( IOException e ) { }
 	
 	//instantiate the player's character
-	Protagonist pat = new Protagonist( name );//should give pat attributes from Protagonist( name)
+	pat = new Protagonist();//should give pat attributes from Protagonist( name)
 	
 	//Class confirmation
 	if (playerClass == 1) {
-	     pat = new Knight( name );//
+	     pat = new Knight (name);//
 	}
     else if (playerClass == 2) {
-         pat = new Mage( name );//
+         pat = new Mage (name);//
 	}
 	else {
 	    pat = new Archer (name);//
 	}
-	System.out.println( pat.about(playerClass) );
+	System.out.println( pat.aboutClass(playerClass) );
 	
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
@@ -125,8 +127,25 @@ public class YoRPG
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
-
-	    smaug = new Monster();
+		
+		smaug = new Monster();
+		
+		//Monster Randomization Process
+		monsterClass = (int)((Math.random() * 10));
+		
+		if (monsterClass <= 1) {
+			smaug = new Dragon ();//
+			monsterName = "The Dragon";
+		}
+		else if (monsterClass <= 5) {
+			smaug = new Giant ();//
+			monsterName = "The Giant";
+		}
+		else {
+			smaug = new Goblin ();//
+			monsterName = "The Goblin";
+		}
+		System.out.println( smaug.aboutMonster(monsterClass) ); 
 
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
@@ -151,7 +170,7 @@ public class YoRPG
         System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");
 
-        System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+        System.out.println( "\n" + monsterName + pat.getName() +
                             " for " + d2 + " points of damage.");
 	    }//end while
 

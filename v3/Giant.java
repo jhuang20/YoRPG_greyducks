@@ -8,7 +8,7 @@ public class Giant extends Monster {
    public Giant() {
 	    this.name = name;
 		health = 200;
-		strength = 100;
+		strength = 75;
 		defense = 25;
 		atkRate = 0.5;
     }

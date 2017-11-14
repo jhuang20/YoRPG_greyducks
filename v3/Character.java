@@ -4,73 +4,68 @@
 // 2017-11-13
 
 public class Character {
+	
     public int health;
     public int strength;
     public int defense;
     public double atkRate;
+	public String name;
 
+    public int getDefense() {
+		return defense; 
+	}
+ 
+    public boolean isAlive() { 
+		return health > 0; 
+	}
 
-    // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
-    public int getDefense() { return defense; }
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public void lowerHP (int damageInflicted) { 
+		health = health - damageInflicted;
+	}
 
-
-    /*=============================================
-      boolean isAlive() -- tell whether I am alive
-      post: returns boolean indicated alive or dead
-      =============================================*/
-    public boolean isAlive()
-    {
-	return health > 0;
-    }
-
-
-    /*=============================================
-      void lowerHP(int) -- lowers life by input value
-      pre:  Input >= 0
-      post: Life instance var is lowered by input ammount.
-      =============================================*/
-    public void lowerHP( int damageInflicted )
-    {
-	health = health - damageInflicted;
-    }
-
-
-    /*=============================================
-      int attack(Protagonist) -- simulates attack on a Protagonist
-      pre:  Input not null
-      post: Calculates damage to be inflicted, flooring at 0.
-      Calls opponent's lowerHP() method to inflict damage.
-      Returns damage dealt.
-      =============================================*/
-    public int attack( Character opponent )
-    {
-	int damage = (int)( (strength * atkRate) - opponent.getDefense() );
-	//System.out.println( "\t\t**DIAG** damage: " + damage );
-
-	if ( damage < 0 )
-	    damage = 0;
-
-	opponent.lowerHP( damage );
-
-	return damage;
-    }//end attack
-
+    public int attack ( Character opponent ) {
+		int damage = (int)((strength * atkRate) - opponent.getDefense());
+		opponent.lowerHP (damage);
+		return damage;
+	}
 	
-    //Choosing your class
-    public String about (int isClass) {
-	if (isClass == 1) {
-	    return "\n An honorable warrior that will slay all evil beings. \n";
+	public String getName() {
+		return name;
 	}
-	else if (isClass == 2) {
-	    return "\n A wizard trained in the arts of magic. \n";
-	}
-	else if (isClass == 3) {
-	    return "\n A marksman from the woods that hunts for a living. \n";
-	}
-	else {
-	    return "";
-	}
+
+    //Class Description
+    public String aboutClass (int isClass) {
+		if (isClass == 1) {
+			return "\n An honorable warrior that will slay all evil beings. \n";
+		}
+		else if (isClass == 2) {
+			return "\n A wizard trained in the arts of magic. \n";
+		}
+		else if (isClass == 3) {
+			return "\n A marksman from the woods that hunts for a living. \n";
+		}
+		else {
+			return "";
+		}
     }
+	
+	//Monster Description
+	public String aboutMonster (int isMonster) {
+		if (isMonster == 1) {
+			return "\n It's a Dragon! The firebreathing terror we all fear the most! \n";
+		}
+		else if (isMonster == 2) {
+			return "\n Look out! It's a Giant! Make sure to keep an eye on its giant club! \n";
+		}
+		else {
+			return "\n It's just a Goblin! We should be okay as long as we're careful... \n";
+		}
+	}
+	
+	// Empty methods for overwriting
+	public void specialize() {
+	}
+	public void normalize() {
+	}
 
 }

@@ -6,14 +6,12 @@
 public class Dragon extends Monster {
 
     public Dragon() {
-	health = 500;
-	strength = 50;
-	defense = 50;
-	atkRate = 2;
+		this.name = name;
+		health = 500;
+		strength = 100;
+		defense = 100;
+		atkRate = 2;
     }
 
-    public static String about() {
-	return "Ye olde dragon from the myths. It is reborn and stronger than ever. Do you have what it takes to slay ye monster?";
-    }
 }
 	
