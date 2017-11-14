@@ -86,8 +86,8 @@ public class YoRPG
 	}
 	catch ( IOException e ) { }
 	
-	//instantiate the player's character
-	pat = new Protagonist();//should give pat attributes from Protagonist( name)
+	/*//instantiate the player's character
+	  pat = new Protagonist();//should give pat attributes from Protagonist( name)*/
 	
 	//Class confirmation
 	if (playerClass == 1) {
@@ -128,7 +128,6 @@ public class YoRPG
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 		
-		smaug = new Monster();
 		
 		//Monster Randomization Process
 		monsterClass = (int)((Math.random() * 10));

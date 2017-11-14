@@ -9,63 +9,52 @@ public class Character {
     public int strength;
     public int defense;
     public double atkRate;
-	public String name;
+    public String name;
 
     public int getDefense() {
-		return defense; 
-	}
+	return defense; 
+    }
  
     public boolean isAlive() { 
-		return health > 0; 
-	}
+	return health > 0; 
+    }
 
     public void lowerHP (int damageInflicted) { 
-		health = health - damageInflicted;
-	}
+	health = health - damageInflicted;
+    }
 
     public int attack ( Character opponent ) {
-		int damage = (int)((strength * atkRate) - opponent.getDefense());
-		opponent.lowerHP (damage);
-		return damage;
-	}
-	
-	public String getName() {
-		return name;
-	}
-
-    //Class Description
-    public String aboutClass (int isClass) {
-		if (isClass == 1) {
-			return "\n An honorable warrior that will slay all evil beings. \n";
-		}
-		else if (isClass == 2) {
-			return "\n A wizard trained in the arts of magic. \n";
-		}
-		else if (isClass == 3) {
-			return "\n A marksman from the woods that hunts for a living. \n";
-		}
-		else {
-			return "";
-		}
+	int damage = (int)((strength * atkRate) - opponent.getDefense());
+	opponent.lowerHP (damage);
+	return damage;
     }
 	
-	//Monster Description
-	public String aboutMonster (int isMonster) {
-		if (isMonster == 1) {
-			return "\n It's a Dragon! The firebreathing terror we all fear the most! \n";
-		}
-		else if (isMonster == 2) {
-			return "\n Look out! It's a Giant! Make sure to keep an eye on its giant club! \n";
-		}
-		else {
-			return "\n It's just a Goblin! We should be okay as long as we're careful... \n";
-		}
+    //Class Description
+    public String aboutClass (int isClass) {
+	if (isClass == 1) {
+	    return "\n An honorable warrior that will slay all evil beings. \n";
 	}
+	else if (isClass == 2) {
+	    return "\n A wizard trained in the arts of magic. \n";
+	}
+	else if (isClass == 3) {
+	    return "\n A marksman from the woods that hunts for a living. \n";
+	}
+	else {
+	    return "";
+	}
+    }
 	
-	// Empty methods for overwriting
-	public void specialize() {
+    //Monster Description
+    public String aboutMonster (int isMonster) {
+	if (isMonster == 1) {
+	    return "\n It's a Dragon! The firebreathing terror we all fear the most! \n";
 	}
-	public void normalize() {
+	else if (isMonster == 2) {
+	    return "\n Look out! It's a Giant! Make sure to keep an eye on its giant club! \n";
 	}
-
+	else {
+	    return "\n It's just a Goblin! We should be okay as long as we're careful... \n";
+	}
+    }
 }

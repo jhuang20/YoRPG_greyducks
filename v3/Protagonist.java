@@ -3,7 +3,7 @@
 // HW31 -- Ye Olde Role Playing Game, expanded
 // 2017-11-13
  
-public class Protagonist extends Character {
+public abstract class Protagonist extends Character {
 	
     public Protagonist() {
 	this.name = name;
@@ -13,10 +13,11 @@ public class Protagonist extends Character {
 	atkRate = 0.5;
     }
 
-    public void normalize() {
-    }
+    public abstract void normalize();
+    public abstract void specialize();
 
-    public void specalize() {
+    public String getName() {
+	return name;
     }
 
     
