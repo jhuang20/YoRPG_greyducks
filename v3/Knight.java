@@ -3,7 +3,7 @@
  // HW30 -- Ye Olde Role Playing Game, Expanded
  // 2017-11-13
  
- public class Knight extends Character {
+ public class Knight extends Protagonist {
 	 
 	 public Knight (String name) {
 		 this.name = name;

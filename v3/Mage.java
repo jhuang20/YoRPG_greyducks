@@ -3,7 +3,7 @@
  // HW30 -- Ye Olde Role Playing Game, Expanded
  // 2017-11-13
  
- public class Mage extends Character {
+ public class Mage extends Protagonist {
 	 
 	 public Mage (String name) {
 		 this.name = name;

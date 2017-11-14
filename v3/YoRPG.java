@@ -95,7 +95,7 @@ public class YoRPG
 		pat = new Mage( name );
 	}
 	else {
-		// insert class Archer in here
+	    pat = new Archer (name);
 	}
 	System.out.println( pat.about(playerClass) );
 	

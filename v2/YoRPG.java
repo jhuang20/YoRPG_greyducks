@@ -1,8 +1,3 @@
- // Team Greyducks -- Addison Huang, James Huang, Frank Chen
- // APCS1 pd1
- // HW28 -- Ye Olde Role Playing Game
- // 2017-11-08
-
 /**********************************************
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
@@ -160,7 +155,6 @@ public class YoRPG
     //As usual, move the begin-comment bar down as you progressively 
     //test each new bit of functionality...
 
-    
     //loading...
     YoRPG game = new YoRPG();
 
@@ -174,7 +168,6 @@ public class YoRPG
     }
 
     System.out.println( "Thy game doth be over." );
-	 
   }//end main
 
 }//end class YoRPG

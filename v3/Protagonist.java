@@ -1,58 +1,78 @@
 // Team Greyducks -- Addison Huang, James Huang, Frank Chen
 // APCS1 pd1
-// HW28 -- Ye Olde Role Playing Game
+// HW31 -- Ye Olde Role Playing Game, expanded
 // 2017-11-08
  
-public class Protagonist extends Character{
-    //instance vars
-    private String name;
-    private int health;
-    private int strength;
-    public int defense;
-    private double atkRate;
-    //constructor : takes string input to name the protagonist
-    public Protagonist (String name) {
-	this.name = name;
-	//default attributes
-	health = 125;
-	strength = 50;
+public class Protagonist extends Character
+{
+    public String name;
+
+
+    /*=============================================
+      default constructor
+      pre:  instance vars are declared
+      post: initializes instance vars.
+      =============================================*/
+    public Protagonist()
+    {
+        health = 125;
+	strength = 100;
 	defense = 40;
-	atkRate = 0.4;
+	atkRate = .4;
     }
-    //isAlive()--returns true if Protagonist still has health left
-    public boolean isAlive() {
-	return (health > 0);
+
+
+    /*=============================================
+      overloaded constructor
+      pre:  instance vars are declared
+      post: initializes instance vars. _name is set to input String.
+      =============================================*/
+    public Protagonist( String _name ) {
+	this();
+	name = _name;
     }
-    //retrieves the value of the "defense" variable
-    public int getDefense() {
-	return defense;
+
+
+    // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
+    public String getName() { return name; }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    /*=============================================
+      int attack(Monster) -- simulates attack on instance of class Monster
+      pre:  Input not null
+      post: Calculates damage to be inflicted, flooring at 0. 
+      Calls opponent's lowerHP() method to inflict damage. 
+      Returns damage dealt.
+      =============================================*/
+    public int attack( Monster opponent )
+    {
+
+	int damage = (int)( (strength * atkRate) - opponent.getDefense() );
+	//System.out.println( "\t\t**DIAG** damage: " + damage );
+
+	if ( damage < 0 )
+	    damage = 0;
+
+	opponent.lowerHP( damage );
+
+	return damage;
+    }//end attack
+
+
+    //prepare a Protagonist for a special attack
+    public void specialize()
+    {
+	atkRate = .75;
+	defense = 20;
     }
-    //retrieves the value of the "name" variable
-    public String getName() {
-	return name;
+
+
+    //revert to normal mode
+    public void normalize()
+    {
+	atkRate = .4;
+	defense = 40;
     }
-    //lowers your "health" by a specified amount(by subtracting the damage from health)
-    public void lowerHP (int damage) {
-	health -= damage;
-    }
-    //attack(Monster x)-- sets the damage of the monster(Object type monster),using the specified formula
-    public int attack (Monster x) {
-	int damage = (int)( (strength * atkRate) - x.getDefense() );//calculates the amount of damage you take
-	x.lowerHP(damage);//lowers YOUR hp by "damage"
-	return damage;//returns the amount of damge done
-    }
-    //specialize() -- decreases your defense but increases your attack
-    public void specialize() {
-	defense -= 20;
-	strength += 50;
-    }
-    //normalize() -- returns you back to your original state after you specialize
-    public void normalize() {
-	defense += 20;
-	strength -= 50;
-    }
-   
-    public static void main(String[] args) {
-    }
-	 
-}
+
+}//end class Protagonist
