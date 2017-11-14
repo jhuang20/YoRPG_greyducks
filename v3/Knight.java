@@ -10,7 +10,7 @@
 		 health = 300;
 		 strength = 50;
 		 defense = 50;
-		 atkRate = 0.5;
+		 atkRate = 1.0;
 	 }
 	 
 	 public void specialize() {

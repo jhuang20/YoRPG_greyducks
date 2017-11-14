@@ -7,20 +7,20 @@ public class Archer extends Protagonist {
 	 
     public Archer (String name) {
 		this.name = name;
-		health = 100;
+		health = 150;
 		strength = 50;
 		defense = 25;
 		atkRate = 2;
     }
 	 
     public void specialize() {
-		defense = 10;
-		strength = 200;
+		defense = 0;
+		atkRate = 6;
     }
 	 
     public void normalize() {
-		defense = 20;
-		strength = 100;
+		defense = 25;
+		atkRate = 2;
     }
 
 }
