@@ -21,8 +21,8 @@ public class YoRPG
   public final static int MAX_ENCOUNTERS = 5;
 
   //each round, a Protagonist and a Monster will be instantiated...
-  private Character pat;   //Is it man or woman?
-  private Monster smaug; //Friendly generic monster name?
+  private Protagonist pat;   //Is it man or woman?
+  private Character smaug; //Friendly generic monster name?
 
   private int moveCount;
   private boolean gameOver;
@@ -85,17 +85,17 @@ public class YoRPG
 	catch ( IOException e ) { }
 	
 	//instantiate the player's character
-    pat = new Protagonist( name );
+	Protagonist pat = new Protagonist( name );//should give pat attributes from Protagonist( name)
 	
 	//Class confirmation
 	if (playerClass == 1) {
-		pat = new Knight( name );
+	     pat = new Knight( name );//
 	}
     else if (playerClass == 2) {
-		pat = new Mage( name );
+         pat = new Mage( name );//
 	}
 	else {
-	    pat = new Archer (name);
+	    pat = new Archer (name);//
 	}
 	System.out.println( pat.about(playerClass) );
 	
@@ -106,7 +106,7 @@ public class YoRPG
 	    name = in.readLine();
     }
     catch ( IOException e ) { }
-
+   
   }//end newGame()
 
 
