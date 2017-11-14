@@ -5,12 +5,19 @@
  
 public class Protagonist extends Character {
 	
-	public Protagonist() {
-		this.name = name;
-		health = 125;
-		strength = 40;
-		defense = 20;
-		atkRate = 0.5;
-	}
-	
+    public Protagonist() {
+	this.name = name;
+	health = 125;
+	strength = 40;
+	defense = 20;
+	atkRate = 0.5;
+    }
+
+    public void normalize() {
+    }
+
+    public void specalize() {
+    }
+
+    
 }//end class Protagonist
