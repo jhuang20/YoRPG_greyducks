@@ -12,5 +12,7 @@ public class Giant extends Monster {
 		defense = 25;
 		atkRate = 0.5;
     }
- 
+ public static String about() {
+return "the mean green killing machine is after you! Good luck on your gith against this powerful opponent!";
+}
 }
