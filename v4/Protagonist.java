@@ -12,7 +12,7 @@ public abstract class Protagonist extends Character {
 	defense = 20;
 	atkRate = 0.5;
     }
-
+    public abstract void about();
     public abstract void normalize();
     public abstract void specialize();
 
