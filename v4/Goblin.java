@@ -12,5 +12,8 @@ public class Goblin extends Monster {
 		defense = 25;
 		atkRate = 1.5;
     }
+	public static String about() {
+return "A nuisance on your travel has appeared. The legendary goblin will make your day a terrible one, can you emerge unscathed?";
+}
 	
 }
