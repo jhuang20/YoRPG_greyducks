@@ -12,6 +12,8 @@ public class Dragon extends Monster {
 		defense = 100;
 		atkRate = 2;
     }
-
+public static String about() {
+return "you face a most formidable opponent. Ye olde dragon is feared throughout the land. Can you defeat this hellish foe.";
+}
 }
 	
