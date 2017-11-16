@@ -12,7 +12,11 @@ public class Archer extends Protagonist {
 		defense = 25;
 		atkRate = 2;
     }
-	 
+
+    public String getName() {
+	return name;
+    }
+    
     public void specialize() {
 		defense = 0;
 		atkRate = 6;
@@ -22,7 +26,7 @@ public class Archer extends Protagonist {
 		defense = 25;
 		atkRate = 2;
     }
-	public static String about() {
+	public String about() {
 	return "Ye olde archer... born out of wedlock, he's faced it all. He sure can attack with his handy bow. He's a man of many years, but these years have given him hard experience.";
 }
 

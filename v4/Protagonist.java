@@ -12,13 +12,9 @@ public abstract class Protagonist extends Character {
 	defense = 20;
 	atkRate = 0.5;
     }
-    public abstract void about();
+    public abstract String about();
     public abstract void normalize();
     public abstract void specialize();
-
-    public String getName() {
-	return name;
-    }
 
     
 }//end class Protagonist

@@ -22,7 +22,7 @@
 		 defense = 20;
 		 strength = 80;
 	 }
-	 public static String about() {
+	 public String about() {
 return "He may be a man at the end of his years; in fact, he can barely get out of bed on a good day, but he sure knows the lay of land and the various spells that can be conjured out of thin air. DOn't underestimate this man.";
 }
  }

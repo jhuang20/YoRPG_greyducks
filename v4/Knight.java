@@ -22,7 +22,7 @@
 		 defense = 50;
 		 strength = 50;
 	 }
-	 public static String about() {
+	 public String about() {
 return "Ye olde knight in shining armor. Has saved many a woman with his chivalry. HEalthy, young, and ready to fight.";
 }
  }

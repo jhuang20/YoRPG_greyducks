@@ -169,7 +169,7 @@ public class YoRPG
         System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");
 
-        System.out.println( "\n" + monsterName + pat.getName() +
+        System.out.println( "\n" + monsterName + " attacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
 	    }//end while
 
