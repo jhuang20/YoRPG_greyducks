@@ -47,10 +47,10 @@ public class Character {
 	
     //Monster Description
     public String aboutMonster (int isMonster) {
-	if (isMonster == 1) {
+	if (isMonster <= 1) {
 	    return "\n It's a Dragon! The firebreathing terror we all fear the most! \n";
 	}
-	else if (isMonster == 2) {
+	else if (isMonster <= 4) {
 	    return "\n Look out! It's a Giant! Make sure to keep an eye on its giant club! \n";
 	}
 	else {

@@ -80,6 +80,9 @@ public class YoRPG
         	
 	/*//instantiate the player's character
 	  pat = new Protagonist();//should give pat attributes from Protagonist( name)*/
+	
+		System.out.println();
+	
 	s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
 
@@ -88,6 +91,8 @@ public class YoRPG
 	}
 	catch ( IOException e ) { }
 
+		System.out.println();
+	
 	//Choosing your class
 	s = "Choose your class: \n";
 	s += "\t1: Knight \n";
@@ -110,18 +115,25 @@ public class YoRPG
 	else {
 	    pat = new Archer(name);//
 	}
-	s= "A kind anonymous soul has bestowed upon you a gift! Choose wisely from one of the gifts";
+	
+	System.out.println( pat.aboutClass(playerClass) );
+	
+	s= "A kind anonymous soul has bestowed upon you a gift! Choose wisely from one of the gifts \n";
 	s+="\n 1. Health Freak: health boost(gain 30% health) (side effect: lose 15% defense and offense) \n";
 	s+="\n 2. Strong Boi: weapon boost(gain 30% offense)(side effect: lose 25% defense) \n";
 	s+="\n 3. Tank: defense boost(gain 50% defense) (side effect: lose 25% health and offense) \n";
-	s+="\n 4. I don't believe in potions \n";
+	s+="\n 4. I don't believe in potions \n\n";
 	s+="Selection: ";
 	System.out.print(s);
+
 	try {
 	    playerSpecial=Integer.parseInt(in.readLine());
 	    
 	}
 	catch (IOException e) { }
+	
+	System.out.println();
+	
 	if (playerSpecial==1) {
 	    pat.health=(int) (1.3*pat.health);
 	    pat.defense=(int) (.85*pat.defense);
@@ -137,17 +149,15 @@ public class YoRPG
 	    pat.defense=(int) (1.5*pat.defense);
 	    pat.strength=(int) (.75*pat.strength);
 	}
-	s="Your player stats";
-	s+="\n Your name:"+name;
-	s+="\n Potion pack:"+playerSpecial;
-	s+="\n Health:"+pat.health;
-	s+="\n Offense:"+pat.strength;
-	s+="\n Defense:"+pat.defense;
+	s="Player's Stats: \n";
+	s+="\n Your name: " + name;
+	s+="\n Potion pack: " + playerSpecial;
+	s+="\n Health: " + pat.health;
+	s+="\n Offense: " + pat.strength;
+	s+="\n Defense: " + pat.defense;
 	System.out.print(s);
-	System.out.println( pat.aboutClass(playerClass) );
+	System.out.println();
 	
-	
-   
     }//end newGame()
     
 
@@ -176,7 +186,7 @@ public class YoRPG
 		smaug = new Dragon ();//
 		monsterName = "The Dragon";
 	    }
-	    else if (monsterClass <= 5) {
+	    else if (monsterClass <= 4) {
 		smaug = new Giant ();//
 		monsterName = "The Giant";
 	    }
