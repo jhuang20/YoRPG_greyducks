@@ -8,13 +8,19 @@ James Huang, Addison Huang, Frank Chen
 2) Add functionality to YoRPG so that one can choose a "companion" weapon to augment attack//defense strength
 ...or maybe, a health potion??
 
-If we have time:
-
-3) Make it so that you can increase attack strength by taking a health hit
 -------------------------------------
 
 Welcome to Ye Olde Role Playing Game! Thou art a protagonist and thou must fighteth ye monsters. Thou may choose to be an archer, knight, or mage. Archers art ranged and have high attack but lack defense and health. Knights art clad in shining armor, ready to save any princess or slay any monster. They are high in health and defense but lack in damage. Mages are similar to archers but they lack in attack rate. I wish thou a good luck on ye olde quest to beat ye olde RPG!  
 
+A QUICK USER GUIDE:
+1. Open Terminal
+2. type in "cd YoRPG_greyducks"_in the terminal, then press enter
+3. type in "cd v5" in the terminal, then press enter
+4. type in "java YoRPG" in the terminal, then press enter
+5. choose your difficulty by entering the appropriate number to the left of the appropriate description( for example, if you want "1. easy", then you would enter "1" in the selection field. Then, press enter
+6. when you need to make a choice, read carefully then enter an appropriate number.
+7. when it says to enter a name, enter a cool name(it can be anything!)
+8. remember step 6!!!
 THE CHARACTERS:
 the good guys(our protagonist):
 Archer- 
@@ -35,3 +41,4 @@ SYNOPSIS: sneaky, but more of a nuisance than an actual monster. He can deal dam
 
 Giant-
 SYNOPSIS: he lumbers slowly, looming over your character like a shadow. When he strikes he attacks with the force of what one could only describe as a painful blow. He's hard to fight, but his size can be used to your advantage because of your superior speed.
+
