@@ -30,6 +30,7 @@ public class YoRPG
   private int playerClass; //Added this for HW30
   private int monsterClass; //Added this for HW30
   private String monsterName;
+    public String name;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -74,40 +75,41 @@ public class YoRPG
     }
     catch ( IOException e ) { }
 	
-	//Choosing your class
-	s = "Choose your class: \n";
-	s += "\t1: Knight \n";
-	s += "\t2: Mage \n";
-	s += "\t3: Archer \n";
-	System.out.print( s );
-	
-	try {
-		playerClass = Integer.parseInt (in.readLine());
-	}
-	catch ( IOException e ) { }
-	
+        	
 	/*//instantiate the player's character
 	  pat = new Protagonist();//should give pat attributes from Protagonist( name)*/
-	
-	//Class confirmation
-	if (playerClass == 1) {
-	     pat = new Knight (name);//
-	}
-    else if (playerClass == 2) {
-         pat = new Mage (name);//
-	}
-	else {
-	    pat = new Archer (name);//
-	}
-	System.out.println( pat.aboutClass(playerClass) );
-	
-    s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
+	s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
     try {
 	    name = in.readLine();
     }
     catch ( IOException e ) { }
+
+    //Choosing your class
+	s = "Choose your class: \n";
+	s += "\t1: Knight \n";
+	s += "\t2: Mage \n";
+	s += "\t3: Archer \n";
+	s += "Selection:";
+	System.out.print( s );
+	
+	try {
+		playerClass = Integer.parseInt (in.readLine());
+	}
+	catch ( IOException e ) { }
+	//Class confirmation
+	if (playerClass == 1) {
+	     pat = new Knight(name);//
+	}
+    else if (playerClass == 2) {
+         pat = new Mage(name);//
+	}
+	else {
+	    pat = new Archer(name);//
+	}
+	System.out.println( pat.aboutClass(playerClass) );
+	
    
   }//end newGame()
 
@@ -130,7 +132,7 @@ public class YoRPG
 		
 		
 		//Monster Randomization Process
-		monsterClass = (int)((Math.random() * 10));
+		monsterClass = (int)(Math.random() * 10);
 		
 		if (monsterClass <= 1) {
 			smaug = new Dragon ();//

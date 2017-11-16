@@ -6,7 +6,7 @@
 public class Archer extends Protagonist {
 	 
     public Archer (String name) {
-		this.name = name;
+	this.name = name;
 		health = 150;
 		strength = 50;
 		defense = 25;
